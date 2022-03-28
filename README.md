@@ -54,7 +54,7 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Mehdi-Rh/ReadMe_Template/issues).
+Feel free to check the [issues page](https://github.com/Mehdi-Rh/Math-Magicians/issues).
 
 ## Show your support
 
