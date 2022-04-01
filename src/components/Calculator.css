@@ -1,6 +1,6 @@
 .wrapper {
   width: 50%;
-  margin: 5rem auto auto; 
+  margin: 5rem auto auto;
 }
 
 .screen {
@@ -17,7 +17,6 @@
 }
 
 .btnBox {
-  
   /* display: -ms-grid; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
