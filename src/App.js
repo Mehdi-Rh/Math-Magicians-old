@@ -1,13 +1,12 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import Calculator from './components/Calculator';
-import React, { Component } from 'react'
 
-export class App extends Component {
+class App extends Component {
   render() {
     return (
-      <Calculator></Calculator>
+      <Calculator/>
     )
   }
-}
+};
 
 export default App;
