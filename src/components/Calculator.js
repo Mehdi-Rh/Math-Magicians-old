@@ -3,7 +3,7 @@ import { Textfit } from 'react-textfit';
 import './Calculator.css';
 import { v4 as uuidv4 } from 'uuid';
 
-export class Calculator extends Component {
+class Calculator extends Component {
   btnValues = [
     ['C', '+-', '%', '/'],
     [7, 8, 9, 'X'],
