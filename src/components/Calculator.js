@@ -5,7 +5,7 @@ import './Calculator.css';
 
 class Calculator extends Component {
   btnValues = [
-    ['C', '+/-', '%', '/'],
+    ['AC', '+/-', '%', '÷'],
     ['7', '8', '9', 'x'],
     ['4', '5', '6', '-'],
     ['1', '2', '3', '+'],
@@ -39,7 +39,7 @@ class Calculator extends Component {
       case '0':
         return 'zero';
 
-      case '/':
+      case '÷':
       case 'x':
       case '-':
       case '+':
