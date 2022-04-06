@@ -5,7 +5,7 @@ import './Calculator.css';
 
 class Calculator extends Component {
   btnValues = [
-    ['C', '+-', '%', '/'],
+    ['C', '+/-', '%', '/'],
     ['7', '8', '9', 'x'],
     ['4', '5', '6', '-'],
     ['1', '2', '3', '+'],
@@ -33,6 +33,7 @@ class Calculator extends Component {
     ));
   }
 
+  // Set class for each button to set their colors
   btnClass = (param) => {
     switch (param) {
       case '0':
