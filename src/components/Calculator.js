@@ -1,26 +1,50 @@
 import React, { Component } from 'react';
-import { Textfit } from 'react-textfit';
+import calculate from './logic/calculate'
 import './Calculator.css';
 import { v4 as uuidv4 } from 'uuid';
 
 class Calculator extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        next: '',
+        total: '',
+        operation: ''
+    };
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick (btn) {
+    console.log("btn",btn);
+    this.setState(state => 
+     calculate(
+      {
+        next: state.next,
+        total: state.total,
+        operation: state.operation
+      } 
+      , btn)
+
+    )
+  }
+  
   btnValues = [
     ['C', '+-', '%', '/'],
-    [7, 8, 9, 'X'],
-    [4, 5, 6, '-'],
-    [1, 2, 3, '+'],
-    [0, '.', '='],
+    ['7', '8', '9', 'x'],
+    ['4', '5', '6', '-'],
+    ['1', '2', '3', '+'],
+    ['0', '.', '='],
   ];
 
-  key = 0
+  
 
   btnClass = (param) => {
     switch (param) {
-      case 0:
+      case '0':
         return 'zero';
 
       case '/':
-      case 'X':
+      case 'x':
       case '-':
       case '+':
       case '=':
@@ -34,19 +58,23 @@ class Calculator extends Component {
   render() {
     return (
       <div className="wrapper">
-        <Textfit className="screen" mode="single" max={30}>
-          {0}
-        </Textfit>
+        <div className="screen" >
+          {this.state.next || this.state.operation || this.state.total || 0}
+        </div>
         <div className="btnBox">
 
+          {/* Display buttons */}
           {this.btnValues.flat().map((btn) => (
+            
             <button
               type="submit"
               key={uuidv4()}
               className={this.btnClass(btn)}
-              onClick={() => {
-                console.log(`${btn} clicked!`);
-              }}
+              onClick={() =>
+                {
+                  this.handleClick(btn)
+              }
+              }
             >
               {btn}
             </button>

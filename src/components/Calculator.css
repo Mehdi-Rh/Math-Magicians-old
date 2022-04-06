@@ -9,11 +9,9 @@
   color: aliceblue;
   display: flex;
   justify-content: flex-end;
-}
-
-.screen div {
-  padding: 1rem;
-  align-self: center;
+  align-items: center;
+  padding: 0 1rem;
+  font-size: 30px;
 }
 
 .btnBox {
