@@ -67,7 +67,7 @@ const Calculator = () => {
 
     </div>
   );
-}
+};
 
 Calculator.defaultProps = {
   value: '0',
