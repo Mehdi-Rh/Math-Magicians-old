@@ -1,0 +1,36 @@
+.wrapper {
+  width: 50%;
+  margin: 5rem auto auto;
+}
+
+.screen {
+  height: 3rem;
+  background-color: grey;
+  color: aliceblue;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 1rem;
+  font-size: 30px;
+}
+
+.btnBox {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.btn {
+  border: 0.1px solid rgb(195, 195, 195);
+  height: 3rem;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.zero {
+  border: 0.1px solid rgb(195, 195, 195);
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
