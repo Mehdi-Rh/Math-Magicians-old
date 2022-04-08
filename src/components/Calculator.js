@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import calculate from './logic/calculate';
 import './Calculator.css';
 
-function Calculator() {
+const Calculator = () => {
   const btnValues = [
     ['AC', '+/-', '%', '÷'],
     ['7', '8', '9', 'x'],
