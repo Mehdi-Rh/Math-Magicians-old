@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import calculate from './logic/calculate';
 import './Calculator.css';
 
-function Calculator () {
+function Calculator() {
   const btnValues = [
     ['AC', '+/-', '%', '÷'],
     ['7', '8', '9', 'x'],
@@ -12,19 +12,17 @@ function Calculator () {
     ['0', '.', '='],
   ];
 
-  const [state, setState] = useState({next:"", total:"", operation:""})
+  const [state, setState] = useState({ next: '', total: '', operation: '' });
 
   const handleClick = (btn) => {
     if (btn === '=' && !state.total) {
-      setState({total: state.next, next:"", operation:""} )
-
+      setState({ total: state.next, next: '', operation: '' });
     } else {
-      const {total, next, operation} = calculate(state, btn)
+      const { total, next, operation } = calculate(state, btn);
 
-      setState({total, next, operation} )
+      setState({ total, next, operation });
     }
-
-  }
+  };
 
   // Set class for each button to set their colors
   const btnClass = (param) => {
@@ -42,33 +40,33 @@ function Calculator () {
       default:
         return 'btn';
     }
-  }
+  };
 
-    return (
-      <div className="wrapper">
-        <div className="screen">
-          {state.next || state.operation || state.total || 0}
-        </div>
-        <div className="btnBox">
-
-          {/* Display buttons */}
-          {btnValues.flat().map((btn) => (
-
-            <button
-              type="submit"
-              key={uuidv4()}
-              className={btnClass(btn)}
-              onClick={() => {
-                handleClick(btn);
-              }}
-            >
-              {btn}
-            </button>
-          )) }
-        </div>
-
+  return (
+    <div className="wrapper">
+      <div className="screen">
+        {state.next || state.operation || state.total || 0}
       </div>
-    );
+      <div className="btnBox">
+
+        {/* Display buttons */}
+        {btnValues.flat().map((btn) => (
+
+          <button
+            type="submit"
+            key={uuidv4()}
+            className={btnClass(btn)}
+            onClick={() => {
+              handleClick(btn);
+            }}
+          >
+            {btn}
+          </button>
+        )) }
+      </div>
+
+    </div>
+  );
 }
 
 Calculator.defaultProps = {
